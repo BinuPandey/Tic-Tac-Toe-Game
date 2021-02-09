@@ -78,10 +78,18 @@ def deactivate():
 
       
 def addX(row, column):
+# Clear previous announcement on the screen when want to proceed
+  announcer.clear()
+  
+# Checking if the spot they wanna use is occupied or not
+  if board[row][column] == "X" or board[row][column] == "O":
+   announcer.write("Oops! Spot is already OCCUPIED! CHOOSE ANOTHER SPOT", font = ("Arial", 36) ) 
+   screen.update()
+  else:      
 # function to draw "X" on the correct spot
-  drawX(-200 + 200 * column, 200 - 200 * row)
+   drawX(-200 + 200 * column, 200 - 200 * row)
 # add an "X" to the Computer's spot 
-  board[row][column] = "X"
+   board[row][column] = "X"
   
 # Define 9 different functions for the each spot on the grid
 def spot1():
@@ -108,9 +116,17 @@ namefunctions = [spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9]
     
 # Defining Turtle instance
 drawer = turtle.Turtle()
+#5. announcer will write messages to the user 
+announcer = turtle.Turtle()
+
 drawer.pensize(5)
 drawer.speed(6)
 drawer.ht()
+
+announcer.penup()
+announcer.ht()
+announcer.goto(-200, 0)
+announcer.color("Red")
 
 # setting up turtle color to purple 
 drawer.color("Purple")
