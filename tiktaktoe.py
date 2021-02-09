@@ -62,6 +62,25 @@ def drawO(x, y):
     drawer.right(2)
 # Update the screen with the new changes
   screen.update()
+ 
+ #6. Creating function to check if inputted player win the game
+def checkWin(letter):
+    # Conditions: (3 in a row horizontally, vertically, diagonally(up&down)) 
+    # Checking if there are three in a row horizontally
+  for i in range(3):
+    if board[i][0] == board[i][1] and board[i][1] == board[i][2] and board[i][0] == letter:
+     return True 
+    # Checking if there are three in a row horizontally
+    if board[0][i] == board[1][i] and board[1][i] == board[2][i] and board[0][i] == letter:
+     return True  
+    # Checking if there are three in a row diagionally up (/)
+    if board[0][2] == board[1][1] and board[1][1] == board[2][0] and board[0][2] == letter:
+     return True
+    # Checking if there are three in a row diagionally down (\)
+    if board[0][0] == board[1][1] and board[1][1] == board[2][2] and board [0][0] == letter:
+     return True
+    #If non of the if statement is true then return False
+    return False
   
 #3. Set it up to enter numbers 1 through 9, so that computer draws "X"s and "O"s in the corresponding spot
 # function to activate even listeners (i.e, namefunctions) 
@@ -90,7 +109,14 @@ def addX(row, column):
    drawX(-200 + 200 * column, 200 - 200 * row)
 # add an "X" to the Computer's spot 
    board[row][column] = "X"
-  
+#6. Creating..... game, and use turtle to announce the victory of a correct winner
+   if checkWin("X"):
+    announcer.goto(-97, 0)
+    announcer.write("You Won!", font = ("Arial", 36))
+    
+    #Update the screen and deactive event listeners
+    screen.update()
+    deactivate()
 # Define 9 different functions for the each spot on the grid
 def spot1():
   addX(0, 0)
