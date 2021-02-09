@@ -81,6 +81,45 @@ def checkWin(letter):
      return True
     #If non of the if statement is true then return False
     return False
+
+#7. Creating function for the computer to play as "O" . So everytime user draws an "X", computer automatically draws "O"
+def addO():
+    # Checking if any spot would result in a win for "O"
+  for i in range(3):
+    for j in range(3):
+      if board[i][j] == " ":
+       board[i][j] = "O"
+       if checkWin("O"):
+         drawO(-200 + 200 * j, 200 - 200 * i)
+         return
+       board[i][j] = " "
+    # Checking if any spot we need to block "X" from winning
+  for i in range(3):
+    for j in range(3):
+      if board[i][j] == " ":
+       board[i][j] = "X"
+       if checkWin("X"):
+        board[i][j] = "O"
+        drawO(-200 + 200 * j, 200 - 200 * i)
+        return
+       board[i][j] = " "
+       
+    # Trying to place an "O" in one of the corners
+  for i in range(0, 3, 2):
+    for j in range(0, 3, 2):
+      if board[i][j] == " ":
+       board[i][j] = "O"
+       drawO(-200 + 200 * j, 200 - 200 * i)
+       return
+   
+   # Placing an O in any empty spot (just for safety if the above forloop never happens)
+  for i in range(3):
+    for j in range(3):
+      if board[i][j] == " ":
+       board[i][j] = "O"
+       drawO(-200 + 200 * j, 200 - 200 * i)
+       return
+           
   
 #3. Set it up to enter numbers 1 through 9, so that computer draws "X"s and "O"s in the corresponding spot
 # function to activate even listeners (i.e, namefunctions) 
