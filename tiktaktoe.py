@@ -15,6 +15,7 @@
 # Let's Code.......................................................
 #1. Using turtle to draw the board
 import turtle 
+import math
 
 # Draw the grid of the board
 def drawBoard():
@@ -34,7 +35,34 @@ def drawBoard():
         
 # Update the screen with the new changes
   screen.update()
-
+  
+#2. Creating functions to draw "X" and "O"
+# Function to draw a shape "X" 
+def drawX(x, y):
+  drawer.penup()
+  drawer.goto(x, y)
+  drawer.pendown()
+  drawer.setheading(60)
+  for i in range(2):
+    drawer.forward(75)
+    drawer.backward(150)
+    drawer.forward(75)
+    drawer.left(60)
+# Update the screen with the new changes
+  screen.update()
+  
+# Function to draw a shape "O" 
+def drawO(x, y):
+  drawer.penup()
+  drawer.goto(x, y + 75)
+  drawer.pendown()
+  drawer.setheading(0)
+  for i in range(180):
+    drawer.forward((150 * math.pi)/180)
+    drawer.right(2)
+# Update the screen with the new changes
+  screen.update()
+    
 # Defining Turtle instance
 drawer = turtle.Turtle()
 drawer.pensize(5)
@@ -50,5 +78,9 @@ screen = turtle.Screen()
 
 #Draw the board
 drawBoard()
+#Draw X
+drawX(0, 0)
+#Draw O
+drawO(0, 0)
 
 
