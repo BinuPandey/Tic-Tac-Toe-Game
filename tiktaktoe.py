@@ -62,6 +62,46 @@ def drawO(x, y):
     drawer.right(2)
 # Update the screen with the new changes
   screen.update()
+  
+#3. Set it up to enter numbers 1 through 9, so that computer draws "X"s and "O"s in the corresponding spot
+# function to activate even listeners (i.e, namefunctions) 
+def activate(namefunctions):
+  for i in range(9):
+# This will assign [i] namefunctions in the lists to [i + 1] numberkey for every namefunctions in the lists
+    screen.onkey(namefunctions[i], str(i + 1))
+    
+# function to deactivate even listeners (i.e, namefunctions) once the game is over    
+def deactivate():
+  for i in range(9):
+# This will assign [i] namefunctions in the lists to [i + 1] numberkey for every namefunctions in the lists
+    screen.onkey(None, str(i + 1))
+
+      
+def addX(row, column):
+  drawX(-200 + 200 * column, 200 - 200 * row)
+  
+# Define 9 different functions for the each spot on the grid
+def spot1():
+  addX(0, 0)
+def spot2():
+  addX(0, 1)
+def spot3():
+  addX(0, 2)
+def spot4():
+  addX(1, 0)
+def spot5():
+  addX(1, 1)
+def spot6():
+  addX(1, 2)
+def spot7():
+  addX(2, 0)
+def spot8():
+  addX(2, 1)
+def spot9():
+  addX(2, 2)
+  
+# When we press the keys (1 to 9), we need lists of name of these functions to set it up as functions to happen 
+namefunctions = [spot1, spot2, spot3, spot4, spot5, spot6, spot7, spot8, spot9]
     
 # Defining Turtle instance
 drawer = turtle.Turtle()
@@ -78,9 +118,7 @@ screen = turtle.Screen()
 
 #Draw the board
 drawBoard()
-#Draw X
-drawX(0, 0)
-#Draw O
-drawO(0, 0)
-
+#Activate keys (0 TO 9)
+activate(namefunctions)
+screen.listen()
 
