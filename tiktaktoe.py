@@ -156,6 +156,18 @@ def addX(row, column):
     #Update the screen and deactive event listeners
     screen.update()
     deactivate()
+    # need to draw "O" everytime a user draws an "X" and keeps adding until "X" wins
+   else:
+    addO()
+    # need to check if "O" won
+   if checkWin("O"):
+    announcer.goto(-90, 0)
+    announcer.write("You Lost!", font = ("Arial", 36))
+    
+    #Update the screen and deactive event listeners
+    screen.update()
+    deactivate()
+    
 # Define 9 different functions for the each spot on the grid
 def spot1():
   addX(0, 0)
