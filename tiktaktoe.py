@@ -82,6 +82,20 @@ def checkWin(letter):
     #If non of the if statement is true then return False
     return False
 
+#9. Creating a function to check if it's a tie, and use turtle to announce if it was a tie
+def checkTie():
+  # Counting the total no. of "X" on the board
+  count = 0
+  for i in range(3):
+    for j in range(3):
+      if board[i][j] == "X":
+        count += 1
+  # Checking the count value is greater than 3, if it is then it's gonna return Tie
+  if count > 3:
+    return True
+  else:
+    return False
+      
 #7. Creating function for the computer to play as "O" . So everytime user draws an "X", computer automatically draws "O"
 def addO():
     # Checking if any spot would result in a win for "O"
@@ -167,6 +181,15 @@ def addX(row, column):
     #Update the screen and deactive event listeners
     screen.update()
     deactivate()
+    
+#9. Creating a fu...............it's a tie, And use turtle to announce if it was a tie
+   elif checkTie():
+    announcer.goto(-90, 0)
+    announcer.write("It's a TIE!", font = ("Arial", 36))
+       
+    #Update the screen and deactive event listeners
+    screen.update()
+    deactivate() 
     
 # Define 9 different functions for the each spot on the grid
 def spot1():
