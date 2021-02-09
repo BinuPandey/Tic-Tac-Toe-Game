@@ -78,7 +78,10 @@ def deactivate():
 
       
 def addX(row, column):
+# function to draw "X" on the correct spot
   drawX(-200 + 200 * column, 200 - 200 * row)
+# add an "X" to the Computer's spot 
+  board[row][column] = "X"
   
 # Define 9 different functions for the each spot on the grid
 def spot1():
@@ -116,8 +119,18 @@ drawer.color("Purple")
 screen = turtle.Screen()
 #screen.tracer(0)
 
-#Draw the board
+#Draw the board 
 drawBoard()
+
+#4. Creating a representation of the board in the code so that computer knows the state of the game
+# Create the board (lists of lists)(nested forloops)
+board = []
+for i in range(3):
+  row = []
+  for j in range(3):
+    row.append(" ")
+  board.append(row)
+
 #Activate keys (0 TO 9)
 activate(namefunctions)
 screen.listen()
