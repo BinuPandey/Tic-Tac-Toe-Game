@@ -92,9 +92,9 @@ def checkTie():
         count += 1
   # Checking the count value is greater than 3, if it is then it's gonna return Tie
   if count > 3:
-    return True
+   return True
   else:
-    return False
+   return False
       
 #7. Creating function for the computer to play as "O" . So everytime user draws an "X", computer automatically draws "O"
 def addO():
@@ -155,7 +155,7 @@ def addX(row, column):
   
 # Checking if the spot they wanna use is occupied or not
   if board[row][column] == "X" or board[row][column] == "O":
-   announcer.write("Oops! Spot is already OCCUPIED! CHOOSE ANOTHER SPOT", font = ("Arial", 36) ) 
+   announcer.write("Oops! Spot already Taken!\nChoose Another Spot \U0001F606", font = ("Arial", 26), ) 
    screen.update()
   else:      
 # function to draw "X" on the correct spot
@@ -165,7 +165,7 @@ def addX(row, column):
 #6. Creating..... game, and use turtle to announce the victory of a correct winner
    if checkWin("X"):
     announcer.goto(-97, 0)
-    announcer.write("You Won!", font = ("Arial", 36))
+    announcer.write("You Win! \U0001F642", font = ("Arial", 36))
     
     #Update the screen and deactive event listeners
     screen.update()
@@ -176,7 +176,7 @@ def addX(row, column):
     # need to check if "O" won
    if checkWin("O"):
     announcer.goto(-90, 0)
-    announcer.write("You Lost!", font = ("Arial", 36))
+    announcer.write("You Lost! \U0001F602", font = ("Arial", 36))
     
     #Update the screen and deactive event listeners
     screen.update()
@@ -185,7 +185,7 @@ def addX(row, column):
 #9. Creating a fu...............it's a tie, And use turtle to announce if it was a tie
    elif checkTie():
     announcer.goto(-90, 0)
-    announcer.write("It's a TIE!", font = ("Arial", 36))
+    announcer.write("It's a Tie! \U0001F917", font = ("Arial", 36))
        
     #Update the screen and deactive event listeners
     screen.update()
@@ -220,7 +220,7 @@ drawer = turtle.Turtle()
 announcer = turtle.Turtle()
 
 drawer.pensize(5)
-drawer.speed(6)
+#drawer.speed(6)
 drawer.ht()
 
 announcer.penup()
@@ -233,7 +233,8 @@ drawer.color("Purple")
 
 # getting a Screen to work on 
 screen = turtle.Screen()
-#screen.tracer(0)
+screen.title("Sagun's Tic-Tac-Toe \U0001f600")
+screen.tracer(0)
 
 #Draw the board 
 drawBoard()
@@ -251,3 +252,4 @@ for i in range(3):
 activate(namefunctions)
 screen.listen()
 
+turtle.done()
