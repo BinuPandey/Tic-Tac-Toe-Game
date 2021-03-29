@@ -14,9 +14,9 @@ User (X) and the computer(O).
 - When you Lose the game:
 ![Lost](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Lost.PNG)
 
--When you Win the game:
+- When you Win the game:
 ![Won](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Won.PNG)
 
--When it's a Tie:
+- When it's a Tie:
 ![Tie](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Tie.PNG)
 
