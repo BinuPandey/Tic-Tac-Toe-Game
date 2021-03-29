@@ -8,15 +8,15 @@ To win this game, the player got to place three of their marks in a diagonal, ho
 User (X) and the computer(O).
 
 # Overview:
-- When you try to take the spot which is already taken, you get an announcement as shown below:
+- **When you try to take the spot which is already taken, you get an announcement as shown below:**
 ![Spot Taken](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/SpotTaken.PNG)
 
-- When you Lose the game:
+- **When you Lose the game:**
 ![Lost](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Lost.PNG)
 
-- When you Win the game:
+- **When you Win the game:**
 ![Won](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Won.PNG)
 
-- When it's a Tie:
+- **When it's a Tie:**
 ![Tie](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Tie.PNG)
 
