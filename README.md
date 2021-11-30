@@ -20,3 +20,4 @@ User (X) and the computer(O).
 - **When it's a Tie:**
 ![Tie](https://github.com/sagunpandey123/Tik-Tak-Toe-Game/blob/main/sources/Tie.PNG)
 
+testing clone
